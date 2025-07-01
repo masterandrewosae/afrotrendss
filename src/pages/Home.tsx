@@ -114,23 +114,38 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
-                <div className="h-80 bg-gradient-to-br from-afro-terracotta to-afro-gold flex items-center justify-center">
-                  <span className="text-white text-lg font-semibold">Featured Item {item}</span>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-afro-earth mb-2">Premium Kente Shirt</h3>
-                  <p className="text-gray-600 mb-4">Handwoven traditional pattern with modern cut</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-afro-gold">₵250</span>
-                    <button className="bg-afro-earth text-white px-4 py-2 rounded-lg hover:bg-afro-earth-dark transition-colors group-hover:scale-105 transform duration-300">
-                      View Details
-                    </button>
-                  </div>
-                </div>
-              </div>
+          import kenteImage from '../assets/images/kente1.jpg'; // adjust path as needed
+
+<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+  {[1, 2, 3].map((item) => (
+    <div
+      key={item}
+      className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+    >
+      <div
+        className="h-80 bg-cover bg-center flex items-center justify-center"
+        style={{ backgroundImage: `url(${kenteImage})` }}
+      >
+        <span className="text-white text-lg font-semibold bg-black bg-opacity-50 px-4 py-2 rounded">
+          Featured Item {item}
+        </span>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-semibold text-afro-earth mb-2">Premium Kente Shirt</h3>
+        <p className="text-gray-600 mb-4">
+          Handwoven traditional pattern with modern cut
+        </p>
+        <div className="flex justify-between items-center">
+          <span className="text-2xl font-bold text-afro-gold">₵250</span>
+          <button className="bg-afro-earth text-white px-4 py-2 rounded-lg hover:bg-afro-earth-dark transition-colors group-hover:scale-105 transform duration-300">
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
             ))}
           </div>
 
